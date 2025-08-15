@@ -18,8 +18,8 @@
       body {
         font-family: "Arial", sans-serif;
         line-height: 1.6;
-        color: #fff;
-        background-color: transparent;
+        color: #333; /* Change text color to dark for better contrast on light background */
+        background-color: #f8f9fa; /* Set a light off-white background */
         overflow-x: hidden;
         position: relative;
       }
@@ -34,6 +34,7 @@
         pointer-events: none;
         z-index: -1;
         overflow: hidden;
+        display: block; /* Ensure it's visible */
       }
 
       .bg-shape {
@@ -41,8 +42,9 @@
         border-radius: 50%;
         background: radial-gradient(
           circle,
-          rgba(255, 107, 53, 0.2) 0%,
-          rgba(255, 107, 53, 0.05) 70%
+          rgba(248, 249, 250, 0.3) 0%,
+          /* Light off-white with transparency */ rgba(233, 236, 239, 0.1) 70%
+            /* Slightly darker off-white with transparency */
         );
         animation: float 15s infinite ease-in-out;
         opacity: 0.4;
@@ -178,8 +180,8 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-        color: white;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: #333;
         padding: 120px 0 80px;
         text-align: center;
       }
@@ -188,20 +190,14 @@
         font-size: 3rem;
         margin-bottom: 1rem;
         font-weight: 700;
-      }
-
-      .highlight {
-        color: #000;
-        background: #fff;
-        padding: 5px 15px;
-        border-radius: 25px;
-        display: inline-block;
+        color: #212529; /* Darker color for better contrast */
       }
 
       .hero-subtitle {
         font-size: 1.2rem;
         margin-bottom: 3rem;
         opacity: 0.9;
+        color: #495057; /* Slightly lighter dark color */
       }
 
       /* Countdown */
@@ -244,15 +240,17 @@
       .progress-container {
         max-width: 500px;
         margin: 0 auto 3rem;
+        padding: 10px;
+        border-radius: 10px;
       }
 
       .progress-bar {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(0, 0, 0, 0.1); /* Daha açık ve nötr bir arka plan */
         height: 12px;
         border-radius: 6px;
         overflow: hidden;
         position: relative;
-        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
       }
 
       .progress-fill {
@@ -298,6 +296,12 @@
         justify-content: center;
         gap: 1rem;
         flex-wrap: wrap;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.1); /* İnce bir kenarlık */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Hafif bir gölge */
+        max-width: 800px; /* Genişliği sınırlayalım */
+        margin: 2rem auto; /* Ortalayalım */
       }
 
       .whatsapp-btn {
@@ -321,7 +325,7 @@
       }
 
       .brochure-btn-large {
-        background: #000;
+        background: #ff6b35; /* Turuncu arka plan */
         color: white;
         border: none;
         padding: 15px 30px;
@@ -336,9 +340,9 @@
       }
 
       .brochure-btn-large:hover {
-        background: #333;
+        background: #e55a2b; /* Koyu turuncu hover rengi */
         transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4); /* Turuncu gölge */
       }
 
       /* About Section */
@@ -638,7 +642,7 @@
       }
     </style>
   </head>
-  <body style="background-color: #000">
+  <body>
     <!-- Animated Background Elements -->
     <div class="bg-shapes">
       <div class="bg-shape"></div>
@@ -661,7 +665,7 @@
         >
           <div class="hero-left" style="flex: 1; min-width: 300px">
             <img
-              src="img/3.png"
+              src="img/2.png"
               alt="Kullan At"
               style="width: 100%; max-width: 400px; height: auto"
             />
@@ -701,26 +705,19 @@
             </div>
           </div>
           <!-- WhatsApp Button -->
-          <div
-            class="cta-buttons"
+          <p
             style="
-              width: 100%;
-              margin-top: 2rem;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
+              font-size: 1.2rem;
+              color: #ff6b35;
+              opacity: 0.8;
+              margin: 2rem 0 2px 0; /* Alt margin'i azalttık */
+              text-align: center;
+              width: 100%; /* Tam genişlik */
             "
           >
-            <p
-              style="
-                font-size: 0.8rem;
-                color: white;
-                opacity: 0.8;
-                margin: 0 0 10px 0;
-              "
-            >
-              şimdilik sadece
-            </p>
+            şimdilik sadece
+          </p>
+          <div class="cta-buttons">
             <div
               style="
                 display: flex;
